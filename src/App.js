@@ -37,6 +37,7 @@ function App() {
           <Grid minH="20vh" p={1}>
             <VStack spacing={4}>
               <Input
+                data-testid="name-input"
                 type="text"
                 placeholder="Name..."
                 onChange={event => {
@@ -44,6 +45,7 @@ function App() {
                 }}
               />
               <Input
+                data-testid="username-input"
                 type="text"
                 placeholder="Username..."
                 onChange={event => {
@@ -51,6 +53,7 @@ function App() {
                 }}
               />
               <Button
+                data-testid="add-button"
                 colorScheme="blue"
                 variant="outline"
                 onClick={() => {
@@ -72,7 +75,7 @@ function App() {
             {userList.map(user => {
               return (
                 <Stack direction="row" spacing={2} textAlign="left" mt={2}>
-                  <Text w="40%">
+                  <Text w="40%" data-testid="name-text">
                     {user.name} {user.username}
                   </Text>
                   <Input
@@ -84,6 +87,7 @@ function App() {
                     }}
                   />
                   <Button
+                    data-testid="update-button"
                     size="md"
                     colorScheme="blue"
                     variant="outline"
@@ -96,8 +100,9 @@ function App() {
                     Update
                   </Button>
                   <Button
+                    data-testid="delete-button"
                     size="md"
-                    colorScheme="blue"
+                    colorScheme="orange"
                     variant="outline"
                     onClick={() => {
                       dispatch(deleteUser({ id: user.id }));
