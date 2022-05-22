@@ -26,7 +26,7 @@ export const UsersData = [
     },
     {
       id: 6,
-      name: "Jake Runolfsdottir V",
+      name: "Jake Runolf",
       username: "Leopoldo_Corkery",
     },
     {
