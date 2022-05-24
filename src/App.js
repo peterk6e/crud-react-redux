@@ -15,7 +15,10 @@ import {
   Input,
   Center,
   Heading,
+  Divider,
 } from '@chakra-ui/react';
+import { DeleteIcon, EditIcon, SmallAddIcon } from '@chakra-ui/icons';
+
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 function App() {
@@ -53,6 +56,7 @@ function App() {
                 }}
               />
               <Button
+                leftIcon={<SmallAddIcon />}
                 data-testid="add-button"
                 colorScheme="blue"
                 variant="outline"
@@ -70,6 +74,7 @@ function App() {
               </Button>
             </VStack>
           </Grid>
+          <Divider mb={5}/>
           <Box textAlign="center">
             <Heading size="lg">List of Users</Heading>
             {userList.map(user => {
@@ -87,6 +92,7 @@ function App() {
                     }}
                   />
                   <Button
+                    leftIcon={<EditIcon />}
                     data-testid="update-button"
                     size="md"
                     colorScheme="blue"
@@ -100,6 +106,7 @@ function App() {
                     Update
                   </Button>
                   <Button
+                    leftIcon={<DeleteIcon />}
                     data-testid="delete-button"
                     size="md"
                     colorScheme="orange"
